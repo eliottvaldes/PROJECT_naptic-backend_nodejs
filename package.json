@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Backend for naptic project created using NodeJS",
   "main": "app.js",
-  "scripts": {    
-  },
+  "scripts": {},
   "keywords": [],
   "author": "Eliot Valdes",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
 }
