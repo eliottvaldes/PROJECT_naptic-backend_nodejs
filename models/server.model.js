@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
+// require the db connection
+const { databaseConnection } = require('../databases/naptic.config');
+
 // Define the server class
 class Server {
     constructor() {
@@ -8,11 +11,20 @@ class Server {
         this.app = express();
         this.port = process.env.PORT || 5000;        
 
+        // call connection to the database
+        this.connectDB();
+
         // call middlewares
         this.middlewares();
 
         // call routes
         this.routes();
+    }
+
+
+    // Database -> here we can define begening of the connection to the database
+    async connectDB() {
+        await databaseConnection();
     }
 
     // Middlewares -> here we can define all the functions that will be executed when the server is running
