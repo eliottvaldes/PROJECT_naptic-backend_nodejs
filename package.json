@@ -1,0 +1,11 @@
+{
+  "name": "project_naptic_backend_nodejs",
+  "version": "1.0.0",
+  "description": "Backend for naptic project created using NodeJS",
+  "main": "app.js",
+  "scripts": {    
+  },
+  "keywords": [],
+  "author": "Eliot Valdes",
+  "license": "ISC"
+}
