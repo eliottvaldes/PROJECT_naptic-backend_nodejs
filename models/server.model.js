@@ -13,6 +13,7 @@ class Server {
 
         // define the paths for routes
         this.paths = {
+            auth:  '/api/auth',
             users: '/api/users',
         }    
 
@@ -43,6 +44,7 @@ class Server {
     routes() {
 
         // define the routes for the users
+        this.app.use(this.paths.auth, require('../routes/auth.routes'));
         this.app.use(this.paths.users, require('../routes/users.routes'));
 
         // 404 error
