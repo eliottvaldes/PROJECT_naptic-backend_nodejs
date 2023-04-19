@@ -9,7 +9,12 @@ class Server {
     constructor() {
         // create the express server
         this.app = express();
-        this.port = process.env.PORT || 5000;        
+        this.port = process.env.PORT || 5000;    
+
+        // define the paths for routes
+        this.paths = {
+            users: '/api/users',
+        }    
 
         // call connection to the database
         this.connectDB();
@@ -36,6 +41,10 @@ class Server {
 
     // Routes -> here we can define all the routes for the server
     routes() {
+
+        // define the routes for the users
+        this.app.use(this.paths.users, require('../routes/users.routes'));
+
         // 404 error
         this.app.use('*', (req, res) => {
             res.status(404).json({
