@@ -29,6 +29,14 @@ const userSchema = Schema({
         type: Boolean,
         default: false
     },
+    creationDate: {
+        type: Date,
+        default: Date.now
+    },
+    lastModificationDate: {
+        type: Date,
+        default: Date.now
+    },
     role: {
         type: Schema.Types.ObjectId,
         ref: 'Role',
@@ -38,7 +46,7 @@ const userSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Plan',
         required: true
-    }
+    }   
 });
 
 // custom methods
